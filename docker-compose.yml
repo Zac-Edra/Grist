@@ -1,0 +1,15 @@
+services:
+  grist:
+    image: gristlabs/grist:latest
+    env_file: .env
+    ports:
+      - 8484:8484
+    # volumes:
+      # - ./grist:/persist
+    # labels:
+    #   - "traefik.http.services.grist.loadbalancer.server.port=8484"
+    #   - "traefik.http.routers.grist.rule=Host(`grist.$LOCALHOST`)"
+    #   - "traefik.http.routers.grist.tls.certresolver=myresolver"
+    #   - "traefik.http.routers.grist-auth.rule=Host(`grist.$LOCALHOST`) && (PathPrefix(`/auth/login`) || PathPrefix(`/_oauth`))"
+    #   - "traefik.http.routers.grist-auth.middlewares=grist-basic-auth@file"
+    #   - "traefik.http.routers.grist-auth.tls.certresolver=myresolver"
